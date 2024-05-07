@@ -26,11 +26,6 @@ class FormCriarConta(FlaskForm):
         usuario = Usuario.query.filter_by(email=email.data).first()
         if usuario:
             raise ValidationError("E-mail já cadastrado, faça login para continuar.")
-        
-    def validate_senha(self, senha):
-        if not senha:
-            raise ValidationError("As senhas devem ser iguais.")
-        
 
 class FormFoto(FlaskForm):
     foto = FileField("Foto", validators=[DataRequired()])
