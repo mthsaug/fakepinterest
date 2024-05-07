@@ -5,7 +5,7 @@ from flask_bcrypt import Bcrypt
 import os
 
 app = Flask(__name__) 
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://banco_nonpinterest_user:0Xdr44wBox1jnUhMf3pwCjKLWAa3gSw6@dpg-cot74licn0vc73a7itvg-a.oregon-postgres.render.com/banco_nonpinterest"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 app.config["SECRET_KEY"] = "d26209c3e5f21a113611c0111ea1a9bc"
 app.config["UPLOAD_FOLDER"] = "static/fotos_posts"
 
